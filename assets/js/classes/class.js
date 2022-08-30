@@ -1,5 +1,5 @@
 class Persona{
-    
+    static _conteo = 0;
     nombre = '';
     codigo = '';
     frase  = '';
@@ -10,6 +10,18 @@ class Persona{
         this.nombre = nombre;
         this.codigo = codigo;
         this.frase  = frase;
+        Persona._conteo++;
+    }
+
+    //Staticos: sirven para utilizarlo en caso de que no se qiera crear alguna instancia
+    //Tambien se trabajan con la estructura y las propiedas de los metodos staticos
+    static get conteo(){
+        return Persona._conteo + ' instancias';
+    }
+
+    //No hay instancias y por ende no se puede lllamar atributos de la clase que no sean estaticos
+    static mensaje(){
+        console.log('Soy un metodo estatico');
     }
 
     //Set: estabecer un valor
@@ -35,9 +47,12 @@ class Persona{
 
 const peter = new Persona('Peter Parker', 'Spiderman', 'No digas mmdas meriyein');
 const tonny = new Persona();
-console.log(peter);
-console.log(tonny);
+// console.log(peter);
+// console.log(tonny);
 peter.miFrase();
 
 peter.setComidaFavorita = 'El pie de cereza de la tia May';
 console.log(peter.getComidaFavorita);
+console.log('conteo '+ Persona._conteo);
+console.log(Persona.conteo);
+Persona.mensaje();
