@@ -1,4 +1,5 @@
 class Persona{
+    
     nombre = '';
     codigo = '';
     frase  = '';
