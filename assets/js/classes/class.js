@@ -5,7 +5,7 @@ class Persona{
     frase  = '';
     comida = '';
 
-    //Se puede asignar valores por defecto a los atributos desde el contructor
+    //Se puede asignar valores por defecto a las propiedades desde el contructor
     constructor(nombre = 'Sin nombre', codigo = 'Sin codigo', frase = 'Sin frase'){
         this.nombre = nombre;
         this.codigo = codigo;
@@ -13,13 +13,13 @@ class Persona{
         Persona._conteo++;
     }
 
-    //Staticos: sirven para utilizarlo en caso de que no se qiera crear alguna instancia
+    //Staticos: sirven para utilizarlo en caso de que no se quiera crear alguna instancia
     //Tambien se trabajan con la estructura y las propiedas de los metodos staticos
     static get conteo(){
         return Persona._conteo + ' instancias';
     }
 
-    //No hay instancias y por ende no se puede lllamar atributos de la clase que no sean estaticos
+    //No hay instancias y por ende no se puede llamar propiedades de la clase que no sean estaticos
     static mensaje(){
         console.log('Soy un metodo estatico');
     }
